@@ -1,0 +1,10 @@
+:root {
+  font-family: "Roboto", Arial, !important;
+
+  background-color: #d5d4d4;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
