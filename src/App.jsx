@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import CurrentWeather from "./components/current-weather/CurrentWeather";
 import Search from "./components/search/Search";
-import { WEATHER_API_KEY, WEATHER_API } from "./utils/Api";
+import { WEATHER_API } from "./utils/Api";
 import Forecast from "./components/forecast/Forecast";
 
 function App() {
@@ -13,10 +13,14 @@ function App() {
     const [lat, lon] = searchData.value.split(" ");
 
     const currentWeatherFetch = fetch(
-      `${WEATHER_API}/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`
+      `${WEATHER_API}/weather?lat=${lat}&lon=${lon}&appid=${
+        import.meta.env.VITE_WEATHER_API_KEY
+      }&units=metric`
     );
     const forecastFetch = fetch(
-      `${WEATHER_API}/forecast?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`
+      `${WEATHER_API}/forecast?lat=${lat}&lon=${lon}&appid=${
+        import.meta.env.VITE_WEATHER_API_KEY
+      }&units=metric`
     );
 
     Promise.all([currentWeatherFetch, forecastFetch])
@@ -30,7 +34,7 @@ function App() {
       .catch((err) => console.log(err));
   };
 
-  console.log(currentWeather);
+  // console.log(currentWeather);
   // console.log(forecast);
 
   return (

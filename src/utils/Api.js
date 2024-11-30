@@ -8,4 +8,3 @@ export const goeApiOption = {
 };
 
 export const WEATHER_API = "https://api.openweathermap.org/data/2.5";
-export const WEATHER_API_KEY = "ec4816fa8a70e1dfa144da9da0b3647b";
